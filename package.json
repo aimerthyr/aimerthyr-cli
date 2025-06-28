@@ -1,0 +1,16 @@
+{
+  "name": "chao-cli",
+  "version": "1.0.0",
+  "bin": {
+    "chao-cli": "bin/index.js"
+  },
+  "author": "aimerthyr<https://github.com/aimerthyr>",
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "cli-progress": "^3.12.0",
+    "commander": "^14.0.0",
+    "inquirer": "^12.6.3",
+    "simple-git": "^3.28.0"
+  }
+}
