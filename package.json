@@ -1,8 +1,8 @@
 {
-  "name": "chao-cli",
+  "name": "aimerthyr-cli",
   "version": "1.0.0",
   "bin": {
-    "chao-cli": "bin/index.js"
+    "aimerthyr-cli": "bin/index.js"
   },
   "author": "aimerthyr<https://github.com/aimerthyr>",
   "type": "module",
