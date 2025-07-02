@@ -80,7 +80,7 @@ async function cloneWithProgress(projectName, repoUrl) {
       });
     } else {
       bar.update(0, {
-        count: "解析中...",
+        count: "解析中,请稍等...",
         size: "0.00",
       });
     }
@@ -92,6 +92,15 @@ async function cloneWithProgress(projectName, repoUrl) {
       bar.stop();
 
       const gitPath = path.join(targetDir, ".git");
+
+      const pkgPath = path.resolve(targetDir, "package.json");
+      const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf8"));
+      fs.writeFileSync(
+        pkgPath,
+        JSON.stringify({ ...pkg, name: projectName }, null, 2),
+        "utf8"
+      );
+
       if (fs.existsSync(gitPath)) {
         fs.rmSync(gitPath, { recursive: true, force: true });
       }
